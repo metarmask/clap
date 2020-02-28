@@ -1829,6 +1829,13 @@ impl<'b> App<'b> {
         self.settings.set(s)
     }
 
+    pub fn set_multiple(mut self, ss: &[AppSettings]) -> Self {
+        for s in ss {
+            self.settings.set(*s)
+        }
+        self
+    }
+
     pub fn set_global(&mut self, s: AppSettings) {
         self.g_settings.set(s)
     }
